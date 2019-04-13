@@ -3,6 +3,12 @@ CREATE DATABASE movieapp;
 
 \c movieapp;
 
+CREATE TABLE genres
+(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL
+);
+
 CREATE TABLE movies
 (
     id SERIAL PRIMARY KEY,
@@ -13,13 +19,7 @@ CREATE TABLE movies
     CONSTRAINT genre_id_fkey 
     FOREIGN KEY (genre_id) REFERENCES genres(id)
     ON DELETE NO ACTION
-)
-
-CREATE TABLE genres
-(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR NOT NULL
-)
+);
 
 CREATE TABLE ratings
 (
@@ -29,7 +29,7 @@ CREATE TABLE ratings
     CONSTRAINT movie_id_fkey 
     FOREIGN KEY (movie_id) REFERENCES movies(id)
     ON DELETE NO ACTION
-)
+);
 
 CREATE TABLE comments
 (
@@ -39,4 +39,4 @@ CREATE TABLE comments
     CONSTRAINT movie_id_fkey 
     FOREIGN KEY (movie_id) REFERENCES movies(id)
     ON DELETE NO ACTION
-)
+);

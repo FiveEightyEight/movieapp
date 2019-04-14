@@ -2,7 +2,7 @@
 INSERT INTO genres (name) VALUES ('Action');
 INSERT INTO genres (name) VALUES ('Adventure');
 INSERT INTO genres (name) VALUES ('Animation');
-INSERT INTO genres (name) VALUES ('Baiography');
+INSERT INTO genres (name) VALUES ('Biography');
 INSERT INTO genres (name) VALUES ('Comedy');
 INSERT INTO genres (name) VALUES ('Crime');	
 INSERT INTO genres (name) VALUES ('Documentary');
@@ -23,3 +23,4 @@ INSERT INTO genres (name) VALUES ('Superhero');
 INSERT INTO genres (name) VALUES ('Thriller');
 INSERT INTO genres (name) VALUES ('War');
 INSERT INTO genres (name) VALUES ('Western');
+INSERT INTO genres (name) VALUES ('Uknown');

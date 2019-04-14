@@ -90,7 +90,7 @@ MovieRouter.post('/comment', (req, res) => {
         });
 });
 
-MovieRouter.post('/movie', (req, res) => {
+MovieRouter.post('/add', (req, res) => {
     const {
         title,
         genre_id,

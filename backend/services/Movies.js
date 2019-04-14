@@ -28,17 +28,28 @@ const byGenre = (genre) => {
 const addRating = (stars, movie_id) => {
     return db.none(`INSERT INTO ratings (stars, movie_id)
     VALUES ($[stars], $[movie_id]);`, {
-        stars,
-        movie_id,
-    });
+            stars,
+            movie_id,
+        });
 };
 
 const addComment = (text, movie_id) => {
     return db.none(`INSERT INTO comments (text, movie_id)
     VALUES ($[text], $[movie_id]);`, {
-        text,
-        movie_id,
-    });
+            text,
+            movie_id,
+        });
+};
+
+const addMovie = (title, genre_id, img_url, release_year) => {
+    return db.one(`INSERT INTO movies (title, genre_id, img_url, release_year)
+    VALUES ($[title], $[genre_id], $[img_url], $[release_year]) 
+    RETURNING id;`, {
+            title, 
+            genre_id, 
+            img_url, 
+            release_year,
+        });
 };
 
 module.exports = {
@@ -47,4 +58,5 @@ module.exports = {
     byGenre,
     addRating,
     addComment,
+    addMovie,
 };

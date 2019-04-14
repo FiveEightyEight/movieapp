@@ -8,7 +8,8 @@ const allMovies = () => {
 };
 
 const allInfo = (id) => {
-    return db.any(`SELECT * FROM ratings
+    return db.any(`SELECT * 
+    FROM ratings
     JOIN comments 
     ON ratings.movie_id = comments.movie_id
     WHERE ratings.movie_id = $[id];`, {
